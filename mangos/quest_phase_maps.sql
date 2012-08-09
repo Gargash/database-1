@@ -28,29 +28,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `db_version`
+-- Table structure for table `quest_phase_maps`
 --
 
-DROP TABLE IF EXISTS `db_version`;
+DROP TABLE IF EXISTS `quest_phase_maps`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `db_version` (
-  `version` varchar(120) DEFAULT NULL,
-  `creature_ai_version` varchar(120) DEFAULT NULL,
-  `cache_id` int(10) DEFAULT '0',
-  `required_0034_xxxxx_03_mangos_player_classlevelstats` bit(1) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Used DB version notes';
+CREATE TABLE `quest_phase_maps` (
+  `questId` int(11) NOT NULL,
+  `map` smallint(6) NOT NULL,
+  `phase` int(11) NOT NULL,
+  PRIMARY KEY (`questId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `db_version`
+-- Dumping data for table `quest_phase_maps`
 --
 
-LOCK TABLES `db_version` WRITE;
-/*!40000 ALTER TABLE `db_version` DISABLE KEYS */;
-INSERT INTO `db_version` (`version`, `creature_ai_version`, `cache_id`, `required_0034_xxxxx_03_mangos_player_classlevelstats`) VALUES
-('MaNGOS Cataclysm Patch 4.3.4 Database','ACID 3.0.9d \'Streamlined Perfection\' - Full Release for MaNGOS (3.3.5a Client)',404,NULL);
-/*!40000 ALTER TABLE `db_version` ENABLE KEYS */;
+LOCK TABLES `quest_phase_maps` WRITE;
+/*!40000 ALTER TABLE `quest_phase_maps` DISABLE KEYS */;
+/*!40000 ALTER TABLE `quest_phase_maps` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
